@@ -54,6 +54,14 @@ Important distinctions:
 
 ## Quick Check
 
+Open the first smoke-test notebook in Colab:
+
+```text
+https://colab.research.google.com/github/moonbuglabs/frustrated-lattice-validation/blob/main/notebooks/fcc_smoke_test.ipynb
+```
+
+For the latest version, reopen the notebook from the GitHub link rather than an older saved Drive copy.
+
 Example Python check:
 
 ```python
