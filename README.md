@@ -115,5 +115,3 @@ For the current API, the CSV recomputation should match the JSON time-window obs
 Copyright (c) 2026 Moonbug Labs LLC.
 
 This repository contains validation notebooks and API-client utilities for black-box frustrated-lattice experiments. It does not contain the proprietary execution engine or implementation details.
-
-Semulo is the intended commercialization brand/entity, pending formation and formal IP arrangements.
