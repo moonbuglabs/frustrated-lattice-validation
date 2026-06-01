@@ -22,7 +22,7 @@ The initial focus is FCC antiferromagnetic validation, with room for additional 
 Base URL:
 
 ```text
-https://semulo-507055539100.us-west1.run.app
+https://api.semulo.com
 ```
 
 Current endpoints include:
@@ -61,7 +61,7 @@ import io
 import pandas as pd
 import requests
 
-BASE = "https://semulo-507055539100.us-west1.run.app"
+BASE = "https://api.semulo.com"
 
 payload = {
     "nx": 8,
