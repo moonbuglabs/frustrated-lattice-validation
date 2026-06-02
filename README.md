@@ -39,6 +39,13 @@ POST /observe/fcc/torus/bonds_window.csv
 
 The JSON summary endpoint reports the experiment metadata, CPU/runtime information, timing, and the time-window nearest-neighbor antiphase observable. The CSV endpoints expose site-level and bond-level data so the reported observable can be recomputed independently.
 
+Bond displacement columns preserve both direction and magnitude:
+
+- `signed_bond_displacement` is the oriented circular displacement from `site_a` to `site_b`.
+- `unsigned_bond_displacement` is the magnitude-only readout used for antiphase classification.
+- `is_antiphase` is derived from unsigned displacement.
+- Windowed bond CSVs expose `window_antiphase_fraction`, which should reproduce the JSON summary observable when averaged across bonds.
+
 ## Validation Posture
 
 This repository does not ask readers to trust a claimed internal mechanism. It exposes the experiment inputs and returned observables so that researchers can test whether the reported behavior survives independent recomputation and control comparisons.
@@ -50,6 +57,7 @@ Important distinctions:
 - Site state and site material rate are configurable through the API.
 - Bonds are fixed nearest-neighbor relations, not configurable weights.
 - Bond observables are derived from endpoint site states.
+- Signed bond displacement preserves orientation; unsigned bond displacement is used for the antiphase fraction.
 - Raw per-tick state is diagnostic; the primary reported observable is time-window based.
 
 ## Quick Check
@@ -102,6 +110,11 @@ bonds_window = pd.read_csv(io.StringIO(window_csv.text))
 
 print(summary["observable"]["antiphase_fraction"])
 print(bonds_window["window_antiphase_fraction"].mean())
+print(bonds_window[[
+    "signed_bond_displacement_mean",
+    "unsigned_bond_displacement_mean",
+    "window_antiphase_fraction",
+]].head())
 print(abs(
     summary["observable"]["antiphase_fraction"]
     - bonds_window["window_antiphase_fraction"].mean()
