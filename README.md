@@ -50,9 +50,11 @@ Bond displacement columns preserve both direction and magnitude:
 
 This repository does not ask readers to trust a claimed internal mechanism. It exposes the experiment inputs and returned observables so that researchers can test whether the reported behavior survives independent recomputation and control comparisons.
 
+The execution engine and internal update rules are patent-pending. The black-box posture is not an attempt to obscure a weak result; it is a legal requirement during the patent process. The observable outputs are fully open precisely so that independent validation can proceed without access to the protected mechanism.
+
 Important distinctions:
 
-- The implementation is black-box.
+- The implementation is black-box (patent-pending).
 - The validation harness is open.
 - Site state and site material rate are configurable through the API.
 - Bonds are fixed nearest-neighbor relations, not configurable weights.
