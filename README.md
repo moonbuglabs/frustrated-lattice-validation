@@ -238,6 +238,6 @@ For the current API, the CSV recomputation should match the JSON time-window obs
 
 ## Ownership
 
-Copyright (c) 2026 Moonbug Labs LLC.
+Copyright (c) 2026 Moonbug Labs LLC. All rights reserved.
 
 This repository contains validation notebooks and API-client utilities for black-box frustrated-lattice experiments. It does not contain the proprietary execution engine or implementation details.
